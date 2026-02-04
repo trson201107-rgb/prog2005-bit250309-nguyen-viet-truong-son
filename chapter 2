@@ -1,0 +1,166 @@
+# bai 1
+
+n = int(input("Nhập số từ 1 đến 9: "))
+if 1 <= n <= 9:
+    for i in range(1, 10):
+        print(n, "x", i, "=", n * i)
+else:
+    print("Số không hợp lệ")
+
+# bai 2
+n = int(input("Nhập số dương: "))
+if n < 2:
+    print("Không phải số nguyên tố")
+else:
+    dem = 0
+    for i in range(1, n + 1):
+        if n % i == 0:
+            dem += 1
+
+    if dem == 2:
+        print("Là số nguyên tố")
+    else:
+        print("Không phải số nguyên tố")
+
+# bai 3
+n = int(input("Nhập n: "))
+a = 0
+b = 1
+
+for i in range(n):
+    print(a, end=" ")
+    c = a + b
+    a = b
+    b = c
+
+# bai 4
+n = int(input("Nhập số: "))
+tong = 0
+while n > 0:
+    tong += n % 10
+    n //= 10
+
+print("Tổng các chữ số:", tong)
+
+# bai 5
+chuoi = input("Nhập chuỗi: ")
+ky_tu = input("Nhập ký tự cần đếm: ")
+dem = 0
+for i in chuoi:
+    if i == ky_tu:
+        dem += 1
+
+print("Số lần xuất hiện:", dem)
+
+# bai 6
+
+def giaithua(n):
+    if n == 0:
+        return 1
+    return n * giaithua(n - 1)
+
+n = int(input("Nhập số: "))
+print("Giai thừa:", giaithua(n))
+
+# bai 7
+
+a = int(input("Nhập số thứ nhất: "))
+b = int(input("Nhập số thứ hai: "))
+uc_ln = 1
+for i in range(1, min(a, b) + 1):
+    if a % i == 0 and b % i == 0:
+        uc_ln = i
+
+print("ƯCLN:", uc_ln)
+
+# bai 8
+n = int(input("Nhập số: "))
+dao = 0
+while n > 0:
+    dao = dao * 10 + n % 10
+    n //= 10
+
+print("Số đảo ngược:", dao)
+
+# bai 9
+
+n = int(input("Nhập số 5 chữ số: "))
+max_so = 0
+while n > 0:
+    so = n % 10
+    if so > max_so:
+        max_so = so
+    n //= 10
+
+print("Chữ số lớn nhất:", max_so)
+
+# bai 10
+
+def tong(n):
+    if n == 1:
+        return 1
+    return n + tong(n - 1)
+
+n = int(input("Nhập n: "))
+print("Tổng:", tong(n))
+
+# bai 11
+
+diem = float(input("Nhập điểm trung bình: "))
+if diem >= 8:
+    print("Giỏi")
+elif diem >= 6.5:
+    print("Khá")
+elif diem >= 5:
+    print("Trung bình")
+else:
+    print("Yếu")
+
+# bai 12
+
+n = int(input("Nhập n: "))
+tong = 0
+for i in range(1, n + 1):
+    if i % 2 != 0:
+        tong += i
+
+print("Tổng số lẻ:", tong)
+
+# bai 13
+
+mat_khau = ""
+
+while mat_khau != "python123":
+    mat_khau = input("Nhập mật khẩu: ")
+
+print("Đăng nhập thành công")
+
+
+# bai 14
+
+n = int(input("Nhập số: "))
+
+la_nguyen_to = True
+
+if n < 2:
+    la_nguyen_to = False
+else:
+    for i in range(2, n):
+        if n % i == 0:
+            la_nguyen_to = False
+            break
+
+if la_nguyen_to:
+    print("Là số nguyên tố")
+else:
+    print("Không phải số nguyên tố")
+
+# bai 15
+n = int(input("Nhập số nguyên dương: "))
+tong = 0
+while n > 0:
+    tong += n % 10
+    n //= 10
+
+print("Tổng các chữ số:", tong)
+
